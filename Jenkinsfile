@@ -1,7 +1,7 @@
 pipeline{
     environment {
-        registry = "YourDockerhubAccount/YourRepository"
-        registryCredential = 'dockerhub_id'
+        registry = "sjw2023/docker-play-ground"
+        registryCredential = 'sjw2023'
         dockerImage = ''
     }
     agent any
