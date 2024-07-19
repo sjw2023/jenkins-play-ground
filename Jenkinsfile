@@ -24,14 +24,14 @@ pipeline{
         stage('Building our image') {
             steps {
                 script {
-                    dockerImage = docker.build("sjw2023/docker-play-ground:$BUILD_NUMBER")
+                    dockerImage = docker.build("sjw2023/docker-play-ground${env.BUILD_NUMBER}")
                 }
             }
         }
         stage('Deploy our image') {
             steps {
                 script {
-                    docker.withRegistry( '', registryCredential ) {
+                    docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {
                         dockerImage.push()
                     }
                 }
