@@ -24,7 +24,7 @@ pipeline{
         stage('Building our image') {
             steps {
                 script {
-                    dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                    dockerImage = docker.build("sjw2023/docker-play-ground:$BUILD_NUMBER")
                 }
             }
         }
